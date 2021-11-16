@@ -1,4 +1,4 @@
-package com.corner.gnu.cornerArchive.Application;
+package com.corner.gnu.cornerArchive;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
