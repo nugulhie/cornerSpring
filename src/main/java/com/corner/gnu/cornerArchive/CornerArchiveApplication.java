@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CornerApplication {
-    public static void main(String[] args){
-        SpringApplication.run(CornerApplication.class, args);
-    }
+public class CornerArchiveApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CornerArchiveApplication.class, args);
+	}
+
 }

@@ -4,7 +4,7 @@
     <persistence-units>
       <persistence-unit name="Default">
         <packages>
-          <package value="com.corner.gnu.cornerArchive.Application" />
+          <package value="com.cornerSpringPorject.corner.demo" />
         </packages>
       </persistence-unit>
     </persistence-units>

@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -32,4 +34,14 @@ public class ProjectsService {
 
         return new ProjectsResponseDto(entity);
     }
+
+    public List<ProjectsResponseDto> readAllProjects(){
+        List<ProjectsResponseDto> entity = new ArrayList<>();
+        List<Projects> projectArray = projectsRepository.findAll();
+        for(int i=0; i<projectArray.size();i++){
+            entity.add(new ProjectsResponseDto(projectArray.get(i)));
+        }
+        return entity;
+    }
+
 }

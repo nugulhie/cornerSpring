@@ -25,10 +25,6 @@ public class PostgreSQLRunner implements ApplicationRunner {
             System.out.println(dataSource.getClass());
             System.out.println(connection.getMetaData().getURL());
             System.out.println(connection.getMetaData().getUserName());
-
-            Statement statement = connection.createStatement();
-            String sql = "CREATE TABLE t_product(product_no INTEGER NOT NULL, product_name VARCHAR(255), PRIMARY KEY (product_no))";
-            statement.executeUpdate(sql);
         }
 
     }
