@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
 
 @NoArgsConstructor
@@ -14,29 +15,40 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long uid;
 
-    @Column()
+    @Column(nullable = false)
     private String name;
 
-    @Column()
-    private String gender;
+    @Column(nullable = false)
+    private String email;
 
-    @Column()
+    @Column(nullable = false)
     private String phoneNumber;
 
-    @Column()
+    @Column(nullable = false)
     private String college;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+
     @Builder
-    public Users(String name, String gender, String phoneNumber, String college){
+    public Users(String name, String email, String college, Role role, String phoneNumber){
         this.name = name;
-        this.gender = gender;
-        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.college = college;
+        this.phoneNumber = phoneNumber;
+        this.role = role;
     }
 
-    public void update(String phoneNumber, String college){
-        this.phoneNumber = phoneNumber;
+    public Users update(String name, String college){
+        this.name = name;
         this.college = college;
+        return this;
+    }
+
+    public String getRoleKey(){
+        return this.role.getKey();
     }
 
 }
